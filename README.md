@@ -1,5 +1,8 @@
 # SIC-probability-daily
-Calibrating daily sea-ice concentration forecasts with NCGR-sic (Non-homogeneous Censored Gaussian Regression for Sea Ice Concentration)
+Calibrating daily sea-ice concentration forecasts with NCGR-sic (Non-homogeneous Censored Gaussian Regression for Sea Ice Concentration). Code is based
+on the publication:
+
+Dirkson, A., Denis, B., Merryfield, W. J., Peterson, K. A., & Tietsche, S. Calibration of subseasonal sea‐ice forecasts using ensemble model output statistics and observational uncertainty. Quarterly Journal of the Royal Meteorological Society.
 
 Code structure:
 
@@ -22,3 +25,5 @@ the DCNORM distribution
 * obs_uncertainty_distribution.py
 
 the outputs of this script are already in `/code/example/data`
+
+Code was developed using Python 3
