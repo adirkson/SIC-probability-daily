@@ -13,10 +13,12 @@ Scripts with classes needed to for performing NCGR-sic:
 Example script to show how to perform NCGR-sic on a sample 33-day forecast
 `/code/example/`
 * seas5_0601_HB.py
+
 usind model and observation data in `/code/example/data`
 
 Example script to show how to fit observation and its uncertainty value to
 the DCNORM distribution
 `/code/example/`
 * obs_uncertainty_distribution.py
+
 the outputs of this script are already in `/code/example/data`
