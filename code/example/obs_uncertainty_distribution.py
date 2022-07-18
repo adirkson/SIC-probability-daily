@@ -5,14 +5,12 @@ Created on Fri Jul 15 14:47:36 2022
 
 @author: ard000
 
-This script shows how to calibrate a 33-day SIC forecast 
-at a single grid point in the western Hudson Bay
-Model data: SEAS5
-Observation data: OSI-SAF
+This script shows how to fit observed SIC values and their
+standard deviations to the DCNORM distribution.
 """
 ### temporary for testing ####
 import sys
-sys.path.append('/fs/homeu2/eccc/cmd/cmdx/ard000/work/sea-ice/geps-s2s-calibration/code/Github/SIC-probability-daily/code/ncgr-sic-package')
+sys.path.append('../ncgr-sic-package')
 
 from dcnorm import dcnorm_gen
 import numpy as np

@@ -170,22 +170,25 @@ for jj in lead:
     # unpack the result
     mu_cal[jj], sigma_cal[jj], sip_cal[jj] = result_calibrate
     rv_cal = dcnorm(mu_cal[jj], sigma_cal[jj])
-    percentiles_cal[jj] = rv_cal.ppf(pcs)
+    percentiles_cal[jj] = rv_cal.ppf(pcs) # ppf is a `scipy.stats.rv_continuous` method to compute percentiles
     
 
 ### Plot the result
 fig = plt.figure(num=1, figsize=(8,8))
 ax = fig.add_subplot(211)
-# plot the raw forecast
+# compute and plot raw forecast percentiles
 X_t_target = X_t_pred[:,:,dist_pred==0.0][:,:,0]
 ax.plot(lead, np.percentile(X_t_target, pcs*100, axis=-1).T, lw=1.0)
 ax.legend(np.around(pcs,2), title='percentiles', ncol=2)
+# plot observation
 ax.plot(lead, Y_tar[t_ind], lw=2.0, color='k', label='obs')
 ax.set_title('Raw Forecast Percentiles')
 
 ax = fig.add_subplot(212)
+# plot calibrated percentiles
 ax.plot(lead, percentiles_cal, lw=1.0)
-ax.plot(lead, Y_tar[t_ind], lw=2.0, color='k', label='obs')
+p2, = ax.plot(lead, Y_tar[t_ind], lw=2.0, color='k', label='obs')
+ax.legend(handles=[p2])
 ax.set_title('Calibrated Forecast Percentiles')
 
 
